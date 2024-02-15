@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-image: url(images/arka_plan.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Added for better coverage */
+    align-items: center;
+    justify-content: center;
+    font-family: 'Muli', sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+.header{
+    position: fixed;
+    top:10px;
+    left:10px;
+}
+
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    border:solid 3px;
+    color: #0c0c0c;
+    flex: 0.5;
+    cursor: pointer;
+    height: 600px; 
+    position: relative;
+    margin: 10px;
+    transition: flex 0.7s cubic-bezier(0.05, 0.6, 0.4, 0.9);
+}
+
+.panel h3 {
+    font-size: 24px;
+    color: #000;
+    opacity: 0;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    transition: opacity 0s ease-in 0s;
+}
+
+.panel.active {
+    flex: 5;/*tek sayı olması yüzde olmasını ifade ediyor ve ne kadar genişleyeceğini bilgilendiriyor*/
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;/*yumuşak geçiş olsun istedim*/
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4) {
+        display: none;
+    }
+
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
